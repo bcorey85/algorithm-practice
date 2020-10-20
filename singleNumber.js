@@ -20,5 +20,3 @@ const singleNumber = array => {
 
 	return parseInt(result[0]);
 };
-
-console.log(singleNumber(array));
