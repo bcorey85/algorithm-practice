@@ -5,6 +5,7 @@
 const tree = [ 3, 9, 20, null, null, 15, 7 ];
 
 const findChild = (array, root) => {
+	// add 0 because current root does not exist
 	if (!array[root]) {
 		return 0;
 	}
@@ -12,6 +13,7 @@ const findChild = (array, root) => {
 	const leftChildIndex = root * 2 + 1;
 	const rightChildIndex = root * 2 + 2;
 
+	// add one because found current root
 	return (
 		Math.max(
 			findChild(array, leftChildIndex),
