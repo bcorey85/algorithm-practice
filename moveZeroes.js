@@ -3,21 +3,19 @@
 const input = [ 0, 0, 1 ];
 
 const moveZeroes = array => {
-	const length = array.length;
-	let totalZeroes = 0;
-	for (let i = 0; i < length; i++) {
-		if (array[i] === 0) {
-			totalZeroes++;
-		} else {
-			array.push(array[i]);
+	let zeroIndex = 0;
+
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] !== 0) {
+			array[zeroIndex] = array[i];
+			zeroIndex++;
 		}
 	}
 
-	for (let i = 0; i < totalZeroes; i++) {
-		array.push(0);
+	while (zeroIndex < array.length) {
+		array[zeroIndex] = 0;
+		zeroIndex++;
 	}
-
-	array.splice(0, length);
 
 	return array;
 };
