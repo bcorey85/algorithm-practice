@@ -33,16 +33,10 @@ const titleToNumber = title => {
 		Z: 26
 	};
 
-	const split = title.split('');
-
-	if (split.length === 1) {
-		return hash[title];
-	}
-
-	let currentExponent = split.length - 1;
+	let currentExponent = title.length - 1;
 	let value = 0;
-	for (let i = 0; i < split.length; i++) {
-		const letter = split[i];
+	for (let i = 0; i < title.length; i++) {
+		const letter = title[i];
 
 		if (currentExponent > 0) {
 			value += Math.pow(26, currentExponent) * hash[letter];
@@ -55,7 +49,7 @@ const titleToNumber = title => {
 	return value;
 };
 
-console.log(titleToNumber(ex1));
-console.log(titleToNumber(ex2));
-console.log(titleToNumber(ex3));
+// console.log(titleToNumber(ex1));
+// console.log(titleToNumber(ex2));
+// console.log(titleToNumber(ex3));
 console.log(titleToNumber(ex4));
